@@ -1,6 +1,7 @@
 import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { ToggleButton } from './ToggleButton';
 
 const Navbar = ({ className }: { className?: string }) => {
   const socials = [
@@ -31,6 +32,7 @@ const Navbar = ({ className }: { className?: string }) => {
         Bishal Moktan 👨🏻‍💻
       </h1>
       <div className="flex items-center gap-5">
+        <ToggleButton id="developer-mode" text="Developer mode" />
         {socials.map((social, index) => {
           const Icon = social.Icon;
           return (
