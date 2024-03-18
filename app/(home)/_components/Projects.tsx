@@ -27,14 +27,14 @@ const Projects = () => {
       tech: [SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiCloudflare],
       link: 'https://blog-serverless-backend.vercel.app/',
       cover: '/project-2.png',
-      background: 'bg-indigo-500',
+      background: 'bg-green-500',
     },
     {
       title: 'Renewable Resource',
       tech: [SiNextdotjs, SiCss3],
       link: 'https://renewable-resources.vercel.app/',
       cover: '/project-3.png',
-      background: 'bg-green-500',
+      background: 'bg-indigo-500',
     },
   ];
   return (
