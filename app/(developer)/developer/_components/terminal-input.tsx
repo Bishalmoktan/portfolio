@@ -5,12 +5,18 @@ import { BiGitBranch } from 'react-icons/bi';
 import { CornerDownRight, Folder } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useAppContext } from '@/app/hooks/useAppContext';
+import { cn } from '@/lib/utils';
 
-const TerminalInput = () => {
+interface TerminalInputProps {
+  value: string;
+  disable: boolean;
+  type: 'history' | 'current';
+}
+
+const TerminalInput = ({ value, disable, type }: TerminalInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(value);
   const { setCmd } = useAppContext();
-
   useEffect(() => {
     if (inputRef) {
       inputRef.current?.focus();
@@ -24,7 +30,7 @@ const TerminalInput = () => {
     }
   };
   return (
-    <div className="p-4">
+    <div className={cn('pt-4', type == 'current' && 'px-4')}>
       <div className="flex  items-center">
         <div className="bg-green-500 py-1 px-4 rounded-full z-20 flex gap-2">
           <FaCanadianMapleLeaf className="size-5" />
@@ -44,11 +50,12 @@ const TerminalInput = () => {
         <input
           type="text"
           className="bg-transparent p-2 text-white  focus:outline-none w-full"
-          placeholder="try help for viewing all commands"
+          placeholder="try `help` for viewing all commands"
           ref={inputRef}
           onKeyDown={handleKeyDown}
-          value={input}
+          value={type == 'current' ? input : value}
           onChange={(e) => setInput(e.target.value)}
+          disabled={disable}
         />
       </div>
     </div>

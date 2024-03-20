@@ -1,7 +1,8 @@
 import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { ToggleButton } from './ToggleButton';
+import { ActionTooltip } from './ActionTooltip';
+import { FaCode } from 'react-icons/fa6';
 
 const Navbar = ({ className }: { className?: string }) => {
   const socials = [
@@ -31,13 +32,15 @@ const Navbar = ({ className }: { className?: string }) => {
       <h1 className="text-2xl font-bold underline underline-offset-8 decoration-green-500 -rotate-2">
         Bishal Moktan 👨🏻‍💻
       </h1>
+      <ActionTooltip label="developer mode" side="bottom" link="/developer">
+        <FaCode className="size-8" />
+      </ActionTooltip>
+
       <div className="flex items-center gap-5">
-        <ToggleButton id="developer-mode" text="Developer mode" />
         {socials.map((social, index) => {
           const Icon = social.Icon;
           return (
             <Link href={social.link} aria-label={social.label} key={index}>
-              {/* TODO: Add tooltip */}
               <Icon className="size-5 hover:scale-125 transition-all" />
             </Link>
           );

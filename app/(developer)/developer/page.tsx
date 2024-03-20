@@ -1,10 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Terminal from './_components/terminal';
 
 const DeveloperPage = () => {
   const screen = useRef<HTMLDivElement>(null);
+
   const enterFullscreen = () => {
     const elem = screen.current;
     if (elem) {
@@ -27,6 +28,31 @@ const DeveloperPage = () => {
       exitFullscreen();
     }
   };
+
+  useEffect(() => {
+    const enterFullscreen = async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await document.body.requestFullscreen();
+          console.log('Entered fullscreen mode');
+        } else {
+          document.exitFullscreen();
+          console.log('Exited fullscreen mode');
+        }
+      } catch (error: any) {
+        console.error('Fullscreen request failed:', error.message);
+      }
+    };
+
+    enterFullscreen();
+
+    return () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+    };
+  }, []);
+
   return (
     <div
       ref={screen}
