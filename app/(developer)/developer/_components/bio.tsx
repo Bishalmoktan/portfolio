@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiGithub, SiX } from 'react-icons/si';
 import BioLoading from './bio-loading';
 
 const Bio = () => {
