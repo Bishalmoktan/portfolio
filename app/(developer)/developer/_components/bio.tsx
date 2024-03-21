@@ -57,7 +57,7 @@ const Bio = () => {
             </div>
           </div>
           <div className="text-xl">{data.bio}</div>
-          <div className="grid grid-cols-2">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2">
             <div className="flex gap-2 text-yellow-500">
               <SiGithub className="size-6" />
               <span className="text-lg"> Github</span>

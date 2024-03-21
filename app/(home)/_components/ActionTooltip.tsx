@@ -27,14 +27,18 @@ export const ActionTooltip = ({
 }: ActionTooltipProps) => {
   const router = useRouter();
   const handleNavigation = () => {
-    toast.success(`Initiating ${link === '/' ? 'Normal' : 'Developer'} mode`, {
-      duration: 1000,
-      position: 'top-center',
-    });
+    let toastId = toast.success(
+      `Initiating ${link === '/' ? 'Normal' : 'Developer'} mode`,
+      {
+        duration: 2000,
+        position: 'top-center',
+      }
+    );
     setTimeout(() => {
       router.push(link);
-    }, 1000);
+    }, 500);
   };
+
   return (
     <div className="cursor-pointer" onClick={handleNavigation}>
       <TooltipProvider>

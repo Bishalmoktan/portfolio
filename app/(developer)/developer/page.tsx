@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Terminal from './_components/terminal';
+import MobileViewAlert from './_components/mobile-view-alert';
 
 const DeveloperPage = () => {
   const screen = useRef<HTMLDivElement>(null);
@@ -57,8 +58,11 @@ const DeveloperPage = () => {
     <div
       ref={screen}
       onDoubleClick={handleFullscreen}
-      className="h-screen w-screen bg-[url('/bgWallpaper.jpg')] bg-cover bg-no-repeat flex justify-center items-center"
+      className="h-screen w-screen bg-[url('/bgWallpaper.jpg')] bg-cover bg-no-repeat flex flex-col gap-2 justify-center items-center"
     >
+      <div className="md:hidden">
+        <MobileViewAlert />
+      </div>
       <Terminal />
     </div>
   );
