@@ -85,6 +85,11 @@ const config = {
             opacity: '1',
           },
         },
+        'progress-in': {
+          from: {
+            transform: 'translateX(-100%)',
+          },
+        },
 
         'accordion-down': {
           from: { height: '0' },
@@ -100,6 +105,7 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'move-up': 'move-up 1s linear forwards',
         'move-down': 'move-down 1s linear forwards',
+        'progress-in': 'progress-in 1s ease-in',
       },
     },
   },

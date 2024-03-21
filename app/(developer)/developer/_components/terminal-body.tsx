@@ -5,6 +5,9 @@ import { useAppContext } from '@/app/hooks/useAppContext';
 import { useEffect, useRef, useState } from 'react';
 import Help from './help';
 import Bio from './bio';
+import Skills from './skills';
+import Projects from './projects';
+import Contact from './contact';
 
 const TerminalBody = () => {
   const { cmd, setCmd } = useAppContext();
@@ -12,7 +15,7 @@ const TerminalBody = () => {
     content: (
       <div className="">
         <TerminalInput value={' '} disable={true} type="history" />
-        <h1 className="text-5xl">Welcome</h1>
+        <h1 className="text-5xl">Hi there!</h1>
       </div>
     ),
   });
@@ -55,6 +58,42 @@ const TerminalBody = () => {
                 {result.content}
                 <TerminalInput value={cmd} disable={true} type="history" />
                 <Bio />
+              </div>
+            ),
+          });
+          setCmd('');
+          break;
+        case 'skills':
+          setResult({
+            content: (
+              <div>
+                {result.content}
+                <TerminalInput value={cmd} disable={true} type="history" />
+                <Skills />
+              </div>
+            ),
+          });
+          setCmd('');
+          break;
+        case 'projects':
+          setResult({
+            content: (
+              <div>
+                {result.content}
+                <TerminalInput value={cmd} disable={true} type="history" />
+                <Projects />
+              </div>
+            ),
+          });
+          setCmd('');
+          break;
+        case 'contact':
+          setResult({
+            content: (
+              <div>
+                {result.content}
+                <TerminalInput value={cmd} disable={true} type="history" />
+                <Contact />
               </div>
             ),
           });
