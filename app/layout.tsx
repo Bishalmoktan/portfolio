@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/theme-provider';
@@ -53,6 +54,7 @@ export default function RootLayout({
           >
             {children}
             <Toaster richColors />
+            <SpeedInsights />
             <Analytics />
           </ThemeProvider>
         </AppProvider>
