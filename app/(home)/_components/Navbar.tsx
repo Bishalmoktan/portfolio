@@ -12,7 +12,7 @@ const Navbar = ({ className }: { className?: string }) => {
       Icon: SiLinkedin,
     },
     {
-      link: 'https://github.com/bishal-moktan',
+      link: 'https://github.com/bishalmoktan',
       label: 'Github',
       Icon: SiGithub,
     },
