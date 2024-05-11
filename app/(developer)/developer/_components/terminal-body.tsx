@@ -8,13 +8,15 @@ import Bio from './bio';
 import Skills from './skills';
 import Projects from './projects';
 import Contact from './contact';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 const TerminalBody = () => {
   const { cmd, setCmd } = useAppContext();
   const [result, setResult] = useState({
     content: (
       <div className="">
-        <TerminalInput value={' '} disable={true} type="history" />
+        <TerminalInput value={'greet'} disable={true} type="history" />
         <h1 className="text-5xl">Hi there!</h1>
       </div>
     ),
@@ -28,6 +30,8 @@ const TerminalBody = () => {
       });
     }
   }, [result]);
+
+  const router = useRouter();
 
   useEffect(() => {
     let newContent;
@@ -51,6 +55,7 @@ const TerminalBody = () => {
           setResult({ content: <div></div> });
           setCmd('');
           break;
+
         case 'bio':
           setResult({
             content: (
@@ -63,6 +68,7 @@ const TerminalBody = () => {
           });
           setCmd('');
           break;
+
         case 'skills':
           setResult({
             content: (
@@ -75,6 +81,7 @@ const TerminalBody = () => {
           });
           setCmd('');
           break;
+
         case 'projects':
           setResult({
             content: (
@@ -87,6 +94,7 @@ const TerminalBody = () => {
           });
           setCmd('');
           break;
+
         case 'contact':
           setResult({
             content: (
@@ -99,6 +107,19 @@ const TerminalBody = () => {
           });
           setCmd('');
           break;
+
+        case 'exit':
+          toast.success('Exiting the developer mode', {
+            duration: 1500,
+            position: 'top-center',
+          });
+
+          setTimeout(() => {
+            router.replace('/');
+          }, 500);
+          setCmd('');
+          break;
+
         default:
           newContent = {
             content: (

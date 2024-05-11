@@ -4,7 +4,13 @@ import { cn } from '@/lib/utils';
 import { ActionTooltip } from './ActionTooltip';
 import { FaCode } from 'react-icons/fa6';
 
-const Navbar = ({ className }: { className?: string }) => {
+const Navbar = ({
+  className,
+  isFooter,
+}: {
+  className?: string;
+  isFooter: boolean;
+}) => {
   const socials = [
     {
       link: 'https://www.linkedin.com/in/bishalmoktan/',
