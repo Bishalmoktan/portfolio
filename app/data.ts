@@ -34,6 +34,10 @@ export const helpCommand = [
     info: 'Show my contact details',
   },
   {
+    title: 'exit',
+    info: 'Exit the terminal mode',
+  },
+  {
     title: 'clear',
     info: 'Clear the terminal',
   },

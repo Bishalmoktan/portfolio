@@ -40,10 +40,12 @@ const TerminalInput = ({ value, disable, type }: TerminalInputProps) => {
           <Folder className="size-5" />
           <p>portfolio</p>
         </div>
-        <div className="bg-rose-400 py-1 px-4 pl-6 rounded-full -ml-5 flex gap-2">
-          <BiGitBranch className="size-5" />
-          <p>ls</p>
-        </div>
+        {value && (
+          <div className="bg-rose-400 py-1 px-4 pl-6 rounded-full -ml-5 flex gap-2">
+            <BiGitBranch className="size-5" />
+            <p>{value}</p>
+          </div>
+        )}
       </div>
       <div className="flex gap-2 items-center">
         <CornerDownRight className="size-6 text-blue-600" />
@@ -53,7 +55,7 @@ const TerminalInput = ({ value, disable, type }: TerminalInputProps) => {
           placeholder="try `help` for viewing all commands"
           ref={inputRef}
           onKeyDown={handleKeyDown}
-          value={type == 'current' ? input : value}
+          value={type == 'current' ? input : value === 'greet' ? ' ' : value}
           onChange={(e) => setInput(e.target.value)}
           disabled={disable}
         />
