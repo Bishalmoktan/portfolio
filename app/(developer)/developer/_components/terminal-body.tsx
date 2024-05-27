@@ -1,7 +1,7 @@
 'use client';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import TerminalInput from './terminal-input';
-import { useAppContext } from '@/app/hooks/useAppContext';
+import { useAppContext } from '@/hooks/useAppContext';
 import { useEffect, useRef, useState } from 'react';
 import Help from './help';
 import Bio from './bio';

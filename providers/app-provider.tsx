@@ -1,12 +1,13 @@
 'use client';
 
-import { AppContextType } from '@/app/types/app-context';
+import { AppContextType } from '@/types/app-context';
 import React, { createContext, useState } from 'react';
 
 export const AppContext = createContext<AppContextType | null>(null);
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [cmd, setCmd] = useState<string>('');
+  const [showConfetti, setShowConfetti] = useState<boolean>(false);
   const [result, setResult] = useState<{ initialState: JSX.Element }>({
     initialState: (
       <div id="result">
@@ -24,6 +25,8 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         setResult,
         cmd,
         setCmd,
+        showConfetti,
+        setShowConfetti
       }}
     >
       {children}

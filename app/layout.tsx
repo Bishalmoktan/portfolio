@@ -10,7 +10,7 @@ import { Toaster } from 'sonner';
 const font = Space_Grotesk({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.bishalmoktan.com.np'),
+  metadataBase: new URL('https://www.bisPhalmoktan.com.np'),
 
   title: {
     template: '%s | Bishal',

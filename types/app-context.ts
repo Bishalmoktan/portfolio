@@ -5,4 +5,6 @@ export type AppContextType = {
   setResult: React.Dispatch<SetStateAction<{ initialState: JSX.Element }>>;
   cmd: string;
   setCmd: React.Dispatch<SetStateAction<string>>;
+  showConfetti: boolean;
+  setShowConfetti: React.Dispatch<SetStateAction<boolean>>;
 };

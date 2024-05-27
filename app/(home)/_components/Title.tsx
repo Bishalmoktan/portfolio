@@ -5,7 +5,7 @@ interface titleProps {
 
 const Title = ({ text, className }: titleProps) => {
   return (
-    <div className={className}>
+    <div className={className || ''}>
       <h1 className="text-3xl font-bold group-hover:text-green-400 transition-all">
         {text}
       </h1>

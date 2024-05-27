@@ -4,7 +4,7 @@ import { FaCanadianMapleLeaf } from 'react-icons/fa6';
 import { BiGitBranch } from 'react-icons/bi';
 import { CornerDownRight, Folder } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { useAppContext } from '@/app/hooks/useAppContext';
+import { useAppContext } from '@/hooks/useAppContext';
 import { cn } from '@/lib/utils';
 
 interface TerminalInputProps {
