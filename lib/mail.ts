@@ -45,7 +45,7 @@ export async function sendMail({email, name, message} : {email: string, name: st
     try {
         const options = {
             from: NEXT_PUBLIC_SMTP_EMAIL,
-            to: email,
+            to: NEXT_PUBLIC_SMTP_EMAIL,
             subject: 'New message from website',
             html: receiveHTML
         }
