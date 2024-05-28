@@ -8,6 +8,8 @@ export async function sendMail({email, name, message} : {email: string, name: st
     const { NEXT_PUBLIC_SMTP_PASSWORD, NEXT_PUBLIC_SMTP_EMAIL } = process.env;
     const transporter = nodemailer.createTransport({
         service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
         auth: {
             user: NEXT_PUBLIC_SMTP_EMAIL,
             pass: NEXT_PUBLIC_SMTP_PASSWORD
