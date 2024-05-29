@@ -7,27 +7,49 @@ import { TextArea } from "@/components/ui/textarea";
 import { useAppContext } from "@/hooks/useAppContext";
 import { toast } from "sonner";
 import { sendMail } from "@/lib/mail";
+import { z } from "zod"
+import { useForm } from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
+export const formSchema = z.object({
+  name: z.string().min(1, {
+    message: 'Please provide your name.',
+  }),
+  email: z.string().email('Please provide a valid email.').min(1, {
+    message: 'Please provide an email.'
+  }),
+  message: z.string().min(1, {
+    message: 'Please write some message.',
+  }),
+});
 
 
 
 export function ContactForm( { setShowModal } : {setShowModal : React.Dispatch<SetStateAction<boolean>>} ) {
+
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      message: '',
+      name: ''
+    }
+  })
+
   const { setShowConfetti } = useAppContext();
   
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
 
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+
+  const handleSubmit = async (values: z.infer<typeof formSchema>) => {
     setLoading(true);
-
+     console.log(values)
     try {
       await sendMail({
-        email,
-        name,
-        message
+        ...values
       })
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000)
@@ -50,20 +72,72 @@ export function ContactForm( { setShowModal } : {setShowModal : React.Dispatch<S
   return (
     <>
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      <form className="my-8" onSubmit={handleSubmit} autoComplete="off">
+      <Form {...form}>
+      <form className="my-8" onSubmit={form.handleSubmit(handleSubmit)} autoComplete="off">
           <LabelInputContainer  className="mb-4">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" required value={name} onChange={(e) => setName(e.target.value)} placeholder="Ram Bahadur" type="text" />
-          </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
-          <Input id="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="example@gmail.com" type="email" />
-        </LabelInputContainer>
+            <FormField 
+              control={form.control}
+              name="name"
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                  <Label htmlFor="name">Name</Label>
+                  </FormLabel>
+                  <FormControl>
+                  <Input id="name" placeholder="Ram Bahadur" type="text"
+                  {...field}
+                  />
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="message">Your message</Label>
-          <TextArea id="message" required value={message} onChange={(e) => setMessage(e.target.value)} placeholder="I want to know about ..." />
-        </LabelInputContainer>
+                  </FormControl>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+  )}
+            />
+          </LabelInputContainer>
+
+          <LabelInputContainer  className="mb-4">
+            <FormField 
+              control={form.control}
+              name="email"
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                  <Label htmlFor="email">Email</Label>
+                  </FormLabel>
+                  <FormControl>
+                  <Input id="email" placeholder="example@gmail.com" type="text"
+                  {...field}
+                  />
+
+                  </FormControl>
+                  <FormMessage className="text-red-500"/>
+                </FormItem>
+  )}
+            />
+          </LabelInputContainer>
+
+          <LabelInputContainer  className="mb-4">
+            <FormField 
+              control={form.control}
+              name="message"
+              render={({field}) => (
+                <FormItem>
+                  <FormLabel>
+                  <Label htmlFor="message">Message</Label>
+                  </FormLabel>
+                  <FormControl>
+                  <TextArea id="message" placeholder="Your message"
+                  {...field}
+                  />
+
+                  </FormControl>
+                  <FormMessage className="text-red-500"/>
+                </FormItem>
+  )}
+            />
+          </LabelInputContainer>
+
+
       
 
         <button
@@ -81,6 +155,7 @@ export function ContactForm( { setShowModal } : {setShowModal : React.Dispatch<S
 
         
       </form>
+      </Form>
     </div>
     </>
   );
