@@ -93,6 +93,13 @@ export const skillsCommand = [
 
 export const projectsCommand = [
   {
+    title: 'Lyric Web App',
+    tech: [SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql],
+    link: 'https://www.bisaric.com',
+    cover: '/project-4.png',
+    background: 'bg-green-500',
+  },
+  {
     title: 'Portfolio',
     tech: [SiNextdotjs, SiTailwindcss, SiPrisma, SiMongodb],
     link: '#',

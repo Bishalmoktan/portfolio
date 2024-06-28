@@ -10,7 +10,7 @@ const HeroSection = () => {
     <>
     <div className="min-h-[60vh] flex flex-col-reverse gap-16 lg:gap-0 lg:flex-row items-center justify-between  animate-move-up">
       <div className="space-y-10 text-center lg:text-left">
-        <h1 className="text-4xl lg:text-7xl font-bold">
+        <h1 className="text-white text-4xl lg:text-7xl font-bold">
           Nice to meet you! 👋 <br />
           <span className="underline underline-offset-8 decoration-green-500">
             {"I'm Bishal Moktan"}

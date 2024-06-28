@@ -35,10 +35,8 @@ const DeveloperPage = () => {
       try {
         if (!document.fullscreenElement) {
           await document.body.requestFullscreen();
-          console.log('Entered fullscreen mode');
         } else {
           document.exitFullscreen();
-          console.log('Exited fullscreen mode');
         }
       } catch (error: any) {
         console.error('Fullscreen request failed:', error.message);

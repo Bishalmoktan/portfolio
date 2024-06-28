@@ -35,7 +35,7 @@ const Navbar = ({
         className
       )}
     >
-      <h1 className="text-2xl font-bold underline underline-offset-8 decoration-green-500 -rotate-2">
+      <h1 className="text-white text-2xl font-bold underline underline-offset-8 decoration-green-500 -rotate-2">
         Bishal Moktan 👨🏻‍💻
       </h1>
 
@@ -43,7 +43,7 @@ const Navbar = ({
         !isFooter &&
 
       <Link href={'/developer'} className="flex flex-col gap-1 items-center justify-center">
-        <FaCode className="size-8" />
+        <FaCode className="size-8 text-white" />
         <MovingBorderBtn borderRadius="0.5rem" className="hidden md:block p-3 font-semibold">
             <p>Dev Mode</p>
           </MovingBorderBtn>
