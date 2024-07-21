@@ -15,7 +15,7 @@ This is my personal portfolio website built with Next.js 14, Tailwind CSS, ShadC
 ## Tech Stack
 
 - **Frontend**: Next.js 14
-- **Styling**: Tailwind CSS, ShadCN UI, Aceternity UI
+- **Styling**: Tailwind CSS, Shadcn UI, Aceternity UI
 
 ## Getting Started
 
