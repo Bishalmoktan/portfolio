@@ -56,7 +56,7 @@ const DeveloperPage = () => {
     <div
       ref={screen}
       onDoubleClick={handleFullscreen}
-      className="h-screen w-screen bg-[url('/bgWallpaper.jpg')] bg-cover bg-no-repeat flex flex-col gap-2 justify-center items-center"
+      className="h-screen w-screen bg-[url('/bgWallpaper.jpg')] bg-center bg-cover bg-no-repeat flex flex-col gap-2 justify-center items-center"
     >
       <div className="md:hidden">
         <MobileViewAlert />

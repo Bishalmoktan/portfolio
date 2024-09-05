@@ -1,8 +1,8 @@
 import { BiSolidEnvelope } from 'react-icons/bi';
 import {
   SiCloudflare,
-  SiCss3,
   SiDocker,
+  SiExpress,
   SiGit,
   SiGithub,
   SiLinkedin,
@@ -12,6 +12,7 @@ import {
   SiPostgresql,
   SiPrisma,
   SiReact,
+  SiSocketdotio,
   SiTailwindcss,
   SiX,
 } from 'react-icons/si';
@@ -100,10 +101,10 @@ export const projectsCommand = [
     background: 'bg-green-500',
   },
   {
-    title: 'Portfolio',
-    tech: [SiNextdotjs, SiTailwindcss, SiPrisma, SiMongodb],
-    link: '#',
-    cover: '/project-1.png',
+    title: 'SyncCode',
+    tech: [SiReact, SiTailwindcss, SiNodedotjs, SiSocketdotio, SiExpress],
+    link: 'https://synccode-live.vercel.app',
+    cover: '/project-3.png',
     background: 'bg-indigo-500',
   },
   {
@@ -112,13 +113,6 @@ export const projectsCommand = [
     link: 'https://blog-serverless-backend.vercel.app/',
     cover: '/project-2.png',
     background: 'bg-indigo-500',
-  },
-  {
-    title: 'Renewable Resource',
-    tech: [SiNextdotjs, SiCss3],
-    link: 'https://renewable-resources.vercel.app/',
-    cover: '/project-3.png',
-    background: 'bg-green-500',
   },
 ];
 
