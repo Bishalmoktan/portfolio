@@ -10,7 +10,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
   const [result, setResult] = useState<{ initialState: JSX.Element }>({
     initialState: (
-      <div id="result">
+      <div id='result'>
         <p>test</p>
         <p>skills</p>
         <p>projects</p>
@@ -26,7 +26,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         cmd,
         setCmd,
         showConfetti,
-        setShowConfetti
+        setShowConfetti,
       }}
     >
       {children}

@@ -31,28 +31,28 @@ const TerminalInput = ({ value, disable, type }: TerminalInputProps) => {
   };
   return (
     <div className={cn('pt-4', type == 'current' && 'px-4')}>
-      <div className="flex  items-center">
-        <div className="bg-green-500 py-1 px-4 rounded-full z-20 flex gap-2">
-          <FaCanadianMapleLeaf className="size-5" />
+      <div className='flex items-center'>
+        <div className='z-20 flex gap-2 rounded-full bg-green-500 px-4 py-1'>
+          <FaCanadianMapleLeaf className='size-5' />
           <p>bishal</p>
         </div>
-        <div className="bg-blue-500 py-1 px-4 pl-6 rounded-full -ml-5 z-10 flex gap-2">
-          <Folder className="size-5" />
+        <div className='z-10 -ml-5 flex gap-2 rounded-full bg-blue-500 px-4 py-1 pl-6'>
+          <Folder className='size-5' />
           <p>portfolio</p>
         </div>
         {value && (
-          <div className="bg-rose-400 py-1 px-4 pl-6 rounded-full -ml-5 flex gap-2">
-            <BiGitBranch className="size-5" />
+          <div className='-ml-5 flex gap-2 rounded-full bg-rose-400 px-4 py-1 pl-6'>
+            <BiGitBranch className='size-5' />
             <p>{value}</p>
           </div>
         )}
       </div>
-      <div className="flex gap-2 items-center">
-        <CornerDownRight className="size-6 text-blue-600" />
+      <div className='flex items-center gap-2'>
+        <CornerDownRight className='size-6 text-blue-600' />
         <input
-          type="text"
-          className="bg-transparent p-2 text-white  focus:outline-none w-full"
-          placeholder="try `help` for viewing all commands"
+          type='text'
+          className='w-full bg-transparent p-2 text-white focus:outline-none'
+          placeholder='try `help` for viewing all commands'
           ref={inputRef}
           onKeyDown={handleKeyDown}
           value={type == 'current' ? input : value === 'greet' ? ' ' : value}

@@ -5,14 +5,14 @@ import Link from 'next/link';
 const TerminalHeader = () => {
   return (
     <div>
-      <div className="bg-gray-800 flex py-2 px-4 rounded-md">
-        <div className="flex gap-2 items-center">
-          <Link href={'/'} className="size-3 bg-rose-500 rounded-full"></Link>
-          <div className="size-3 bg-yellow-500 rounded-full"></div>
-          <div className="size-3 bg-green-500 rounded-full"></div>
+      <div className='flex rounded-md bg-gray-800 px-4 py-2'>
+        <div className='flex items-center gap-2'>
+          <Link href={'/'} className='size-3 rounded-full bg-rose-500'></Link>
+          <div className='size-3 rounded-full bg-yellow-500'></div>
+          <div className='size-3 rounded-full bg-green-500'></div>
         </div>
-        <div className="flex-1 text-center">Bishal Moktan / Portfolio</div>
-        <ActionTooltip label="normal mode" side="top" link="/">
+        <div className='flex-1 text-center'>Bishal Moktan / Portfolio</div>
+        <ActionTooltip label='normal mode' side='top' link='/'>
           <Undo2 />
         </ActionTooltip>
       </div>

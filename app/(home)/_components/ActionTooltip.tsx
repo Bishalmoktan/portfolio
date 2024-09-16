@@ -40,12 +40,12 @@ export const ActionTooltip = ({
   };
 
   return (
-    <div className="cursor-pointer" onClick={handleNavigation}>
+    <div className='cursor-pointer' onClick={handleNavigation}>
       <TooltipProvider>
         <Tooltip delayDuration={50}>
           <TooltipTrigger asChild>{children}</TooltipTrigger>
           <TooltipContent side={side} align={align}>
-            <p className="font-semibold text-sm capitalize">
+            <p className='text-sm font-semibold capitalize'>
               {label.toLowerCase()}
             </p>
           </TooltipContent>

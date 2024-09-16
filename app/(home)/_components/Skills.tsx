@@ -6,10 +6,10 @@ import { HoverEffect } from '@/components/ui/card-hover-effect';
 
 const Skills = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8">
+    <div className='mx-auto max-w-5xl px-8'>
       <Title
-        text="Skills 🔪"
-        className="flex flex-col items-center justify-center -rotate-6"
+        text='Skills 🔪'
+        className='flex -rotate-6 flex-col items-center justify-center'
       />
       <HoverEffect items={skillsCommand} />
     </div>

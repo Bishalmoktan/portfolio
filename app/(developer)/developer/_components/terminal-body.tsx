@@ -15,9 +15,9 @@ const TerminalBody = () => {
   const { cmd, setCmd } = useAppContext();
   const [result, setResult] = useState({
     content: (
-      <div className="">
-        <TerminalInput value={'greet'} disable={true} type="history" />
-        <h1 className="text-5xl">Hi there!</h1>
+      <div className=''>
+        <TerminalInput value={'greet'} disable={true} type='history' />
+        <h1 className='text-5xl'>Hi there!</h1>
       </div>
     ),
   });
@@ -42,7 +42,7 @@ const TerminalBody = () => {
             content: (
               <div>
                 {result.content}
-                <TerminalInput value={cmd} disable={true} type="history" />
+                <TerminalInput value={cmd} disable={true} type='history' />
                 <Help />
               </div>
             ),
@@ -61,7 +61,7 @@ const TerminalBody = () => {
             content: (
               <div>
                 {result.content}
-                <TerminalInput value={cmd} disable={true} type="history" />
+                <TerminalInput value={cmd} disable={true} type='history' />
                 <Bio />
               </div>
             ),
@@ -74,7 +74,7 @@ const TerminalBody = () => {
             content: (
               <div>
                 {result.content}
-                <TerminalInput value={cmd} disable={true} type="history" />
+                <TerminalInput value={cmd} disable={true} type='history' />
                 <Skills />
               </div>
             ),
@@ -87,7 +87,7 @@ const TerminalBody = () => {
             content: (
               <div>
                 {result.content}
-                <TerminalInput value={cmd} disable={true} type="history" />
+                <TerminalInput value={cmd} disable={true} type='history' />
                 <Projects />
               </div>
             ),
@@ -100,7 +100,7 @@ const TerminalBody = () => {
             content: (
               <div>
                 {result.content}
-                <TerminalInput value={cmd} disable={true} type="history" />
+                <TerminalInput value={cmd} disable={true} type='history' />
                 <Contact />
               </div>
             ),
@@ -125,9 +125,9 @@ const TerminalBody = () => {
             content: (
               <div>
                 {result.content}
-                <TerminalInput value={cmd} disable={true} type="history" />
+                <TerminalInput value={cmd} disable={true} type='history' />
                 <div>
-                  <p className="text-rose-500">Invalid Command</p>
+                  <p className='text-rose-500'>Invalid Command</p>
                   <p>Please try `help` to see the command</p>
                 </div>
               </div>
@@ -141,10 +141,10 @@ const TerminalBody = () => {
     }
   }, [cmd]);
   return (
-    <ScrollArea className="bg-black bg-opacity-70 border-1 border-gray-800 h-[60vh] w-full ">
-      <div className="">
-        <div className="px-4">{result.content}</div>
-        <TerminalInput value="" disable={false} type="current" />
+    <ScrollArea className='border-1 h-[60vh] w-full border-gray-800 bg-black bg-opacity-70'>
+      <div className=''>
+        <div className='px-4'>{result.content}</div>
+        <TerminalInput value='' disable={false} type='current' />
       </div>
       <div ref={scroll}></div>
     </ScrollArea>

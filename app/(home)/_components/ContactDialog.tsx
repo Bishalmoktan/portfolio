@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import {
   Dialog,
@@ -7,25 +7,27 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import Title from "./Title";
-import { ContactForm } from "./ContactForm";
-import { useState } from "react";
-
+} from '@/components/ui/dialog';
+import Title from './Title';
+import { ContactForm } from './ContactForm';
+import { useState } from 'react';
 
 export function ContactDialog() {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
     setShowModal(false);
-  }
+  };
   return (
     <Dialog open={showModal} onOpenChange={handleClose}>
-        <div className="cursor-pointer" onClick={() => setShowModal(true)}>
-        <Title text="Contact Me 📬"  className="flex flex-col justify-center items-center md:items-start"  />
-        </div>
+      <div className='cursor-pointer' onClick={() => setShowModal(true)}>
+        <Title
+          text='Contact Me 📬'
+          className='flex flex-col items-center justify-center md:items-start'
+        />
+      </div>
        
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className='sm:max-w-[425px]'>
         <DialogHeader>
           <DialogTitle>Contact Me</DialogTitle>
           <DialogDescription>
@@ -35,6 +37,5 @@ export function ContactDialog() {
         <ContactForm setShowModal={setShowModal} />
       </DialogContent>
     </Dialog>
-
   );
 }
