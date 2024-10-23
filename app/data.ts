@@ -1,6 +1,5 @@
 import { BiSolidEnvelope } from 'react-icons/bi';
 import {
-  SiCloudflare,
   SiDocker,
   SiExpress,
   SiGit,
@@ -15,6 +14,8 @@ import {
   SiSocketdotio,
   SiTailwindcss,
   SiX,
+  SiSolana,
+  SiHiveBlockchain,
 } from 'react-icons/si';
 
 export const helpCommand = [
@@ -108,10 +109,10 @@ export const projectsCommand = [
     background: 'bg-indigo-500',
   },
   {
-    title: 'Blogging Website',
-    tech: [SiReact, SiTailwindcss, SiPrisma, SiPostgresql, SiCloudflare],
-    link: 'https://blog-serverless-backend.vercel.app/',
-    cover: '/project-2.png',
+    title: 'Solana Wallet Adapter',
+    tech: [SiReact, SiTailwindcss, SiSolana, SiHiveBlockchain],
+    link: 'https://web3-wallet-solana.vercel.app/',
+    cover: '/wallet-adapter.png',
     background: 'bg-indigo-500',
   },
 ];
