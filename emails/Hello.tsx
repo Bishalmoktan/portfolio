@@ -24,8 +24,8 @@ export const HelloTemplate = ({ name }: HelloTemplateProps) => (
           Hi {name || ''},
         </Heading>
         <Text style={paragraph}>
-          Thank you for your message. You message has been sent. You will get an
-          response with 1-2 working days.
+          Thank you for your message. Your message has been sent. You will get
+          an response with 1-2 working days.
         </Text>
 
         <Hr style={hr} />
