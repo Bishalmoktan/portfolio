@@ -16,6 +16,8 @@ import {
   SiX,
   SiSolana,
   SiHiveBlockchain,
+  SiThreedotjs,
+  SiGreensock,
 } from 'react-icons/si';
 
 export const helpCommand = [
@@ -98,14 +100,21 @@ export const projectsCommand = [
     title: 'Lyric Web App',
     tech: [SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql],
     link: 'https://www.bisaric.com',
-    cover: '/project-4.png',
+    cover: '/bisaric.png',
     background: 'bg-green-500',
   },
   {
     title: 'SyncCode',
     tech: [SiReact, SiTailwindcss, SiNodedotjs, SiSocketdotio, SiExpress],
     link: 'https://synccode-live.vercel.app',
-    cover: '/project-3.png',
+    cover: '/sync-code.png',
+    background: 'bg-indigo-500',
+  },
+  {
+    title: 'Iphone Website',
+    tech: [SiReact, SiTailwindcss, SiThreedotjs, SiGreensock],
+    link: 'https://iphone-dashboard.vercel.app/',
+    cover: '/iphone-website.png',
     background: 'bg-indigo-500',
   },
   {
@@ -113,7 +122,7 @@ export const projectsCommand = [
     tech: [SiReact, SiTailwindcss, SiSolana, SiHiveBlockchain],
     link: 'https://web3-wallet-solana.vercel.app/',
     cover: '/wallet-adapter.png',
-    background: 'bg-indigo-500',
+    background: 'bg-green-500',
   },
 ];
 
