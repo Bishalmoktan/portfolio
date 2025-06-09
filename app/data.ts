@@ -104,24 +104,24 @@ export const projectsCommand = [
     background: 'bg-green-500',
   },
   {
+    title: 'Audio Enhancer',
+    tech: [SiReact, SiTailwindcss, SiNextdotjs, SiExpress],
+    link: 'https://ae.mybandbreeze.com/',
+    cover: '/audio-enhancer.png',
+    background: 'bg-indigo-500',
+  },
+  {
+    title: 'Video Editor',
+    tech: [SiReact, SiTailwindcss, SiNextdotjs, SiExpress],
+    link: 'https://drb.mybandbreeze.com/',
+    cover: '/video-editor.png',
+    background: 'bg-indigo-500',
+  },
+  {
     title: 'SyncCode',
     tech: [SiReact, SiTailwindcss, SiNodedotjs, SiSocketdotio, SiExpress],
     link: 'https://synccode-live.vercel.app',
     cover: '/sync-code.png',
-    background: 'bg-indigo-500',
-  },
-  {
-    title: 'Iphone Website',
-    tech: [SiReact, SiTailwindcss, SiThreedotjs, SiGreensock],
-    link: 'https://iphone-dashboard.vercel.app/',
-    cover: '/iphone-website.png',
-    background: 'bg-indigo-500',
-  },
-  {
-    title: 'Solana Wallet Adapter',
-    tech: [SiReact, SiTailwindcss, SiSolana, SiHiveBlockchain],
-    link: 'https://web3-wallet-solana.vercel.app/',
-    cover: '/wallet-adapter.png',
     background: 'bg-green-500',
   },
 ];
